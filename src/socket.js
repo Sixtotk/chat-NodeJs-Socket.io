@@ -2,11 +2,9 @@ module.exports = (io) => {
 
   let nickNames = []
   io.on('connection', socket => {
-    console.log('Nuevo usuario detectado');
-
+    
     //Al recibir el mensaje recojemos los datos
     socket.on('enviar mensaje', (datos) => {
-      //console.log(datos);
 
       io.sockets.emit('nuevo mensaje', {
         msg:datos,
